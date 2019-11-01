@@ -22,7 +22,9 @@ function toggleLoading(toggle) {
 async function requestStartListener(event) {
     const text = requestText.value;
     console.log(text);
-    const response = await fetch(`http://localhost/gcp-lang?text=${text}`);
+    const response = await fetch(
+        `${document.location.origin}/gcp-lang?text=${text}`,
+    );
 
     toggleLoading(false);
 
