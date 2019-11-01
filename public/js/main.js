@@ -20,6 +20,9 @@ function toggleLoading(toggle) {
     classList.add('hidden');
 }
 async function requestStartListener(event) {
+    resultArea.innerHTML = '';
+    toggleLoading(true);
+    
     const text = requestText.value;
     console.log(text);
     const response = await fetch(
@@ -39,8 +42,4 @@ async function requestStartListener(event) {
     resultArea.innerHTML = stringResult;
 }
 
-requestButton.addEventListener('click', (e) => {
-    resultArea.innerHTML = '';
-    toggleLoading(true);
-    requestStartListener(e);
-});
+requestButton.addEventListener('click', (e) => { requestStartListener(e); });
