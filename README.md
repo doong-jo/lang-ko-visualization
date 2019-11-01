@@ -1,2 +1,19 @@
 # lang-ko-visualization
 한글 문장에 대한 감정분석과 시각화
+
+### [Demo](https://gcp-nlp.herokuapp.com/)
+
+### Server (Node.js, Express)
+
+#### `middleware/lang.js`
+[GCP - Cloud Natural Language API](https://cloud.google.com/natural-language/docs/quickstart-client-libraries?hl=ko)를 참고하여 작성
+
+#### GET
+- /gcp-lang?text="setneces..."
+
+
+### Client (VanillaJS)
+- `index.html` : layout
+- `js/main.js` : javascript (API 요청 및 click listener)
+- `css/style.css` : 스타일링
+- `css/normalize.min.css` : css 초기화
