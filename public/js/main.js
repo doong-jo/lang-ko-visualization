@@ -1,12 +1,8 @@
-function resize(obj) {
-    obj.style.height = '1px';
-    obj.style.height = `${12 + obj.scrollHeight}px`;
-}
-
 const requestText = document.querySelector('.sentence-input');
 const requestButton = document.querySelector('#btn-request');
 const resultArea = document.querySelector('.result-area');
 const resultLoading = document.querySelector('.result-loading');
+const sentenceInput = document.querySelector('.sentence-input');
 
 function toggleLoading(toggle) {
     const { classList } = resultLoading;
@@ -19,27 +15,45 @@ function toggleLoading(toggle) {
     classList.remove('show');
     classList.add('hidden');
 }
-async function requestStartListener(event) {
-    resultArea.innerHTML = '';
-    toggleLoading(true);
-    
-    const text = requestText.value;
-    console.log(text);
-    const response = await fetch(
-        `${document.location.origin}/gcp-lang?text=${text}`,
-    );
 
-    toggleLoading(false);
-
-    if (!response.ok) {
-        resultArea.innerHTML = 'request fail';
-        return;
+function initListener() {
+    function textAreaResize(textarea) {
+        textarea.style.height = '1px';
+        textarea.style.height = `${12 + textarea.scrollHeight}px`;
     }
-    const json = await response.json();
 
-    const stringResult = JSON.stringify(json, null, 4);
-    console.log(json);
-    resultArea.innerHTML = stringResult;
+    async function requestStartListener(event) {
+        resultArea.innerHTML = '';
+        toggleLoading(true);
+
+        const text = requestText.value;
+        const response = await fetch(
+            `${document.location.origin}/gcp-lang?text=${text}`,
+        );
+
+        toggleLoading(false);
+
+        if (!response.ok) {
+            resultArea.innerHTML = 'request fail';
+            return;
+        }
+        const json = await response.json();
+
+        const stringResult = JSON.stringify(json, null, 4);
+        resultArea.innerHTML = stringResult;
+    }
+
+    sentenceInput.addEventListener('keydown', (e) => {
+        textAreaResize(e.target);
+    });
+
+    sentenceInput.addEventListener('keyup', (e) => {
+        textAreaResize(e.target);
+    });
+
+    requestButton.addEventListener('click', (e) => {
+        requestStartListener(e);
+    });
 }
 
-requestButton.addEventListener('click', (e) => { requestStartListener(e); });
+initListener();
