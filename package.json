@@ -16,7 +16,7 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start": "export GOOGLE_APPLICATION_CREDENTIALS=./GCP-key.json && export PORT=80 && nodemon app",
+    "start": "nodemon app",
     "dev": "export GOOGLE_APPLICATION_CREDENTIALS=./GCP-key.json && export PORT=3000 && nodemon app",
     "test": "export PORT=3000 && jest --verbose --runInBand"
   },
