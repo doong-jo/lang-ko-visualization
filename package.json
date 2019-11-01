@@ -1,0 +1,24 @@
+{
+  "name": "lang-ko-visualization",
+  "version": "0.0.1",
+  "description": "한글 문장에 대한 감정분석과 시각화",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/language": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "export NODE_ENV=./GCP-key.json && node app",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doong-jo/lang-ko-visualization.git"
+  },
+  "author": "Sungdong Jo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doong-jo/lang-ko-visualization/issues"
+  },
+  "homepage": "https://github.com/doong-jo/lang-ko-visualization#readme"
+}
