@@ -5,6 +5,14 @@
 
 --- 
 
+### Install
+`npm install`
+
+### Usage
+`npm start`
+
+--- 
+
 ### Server (Node.js, Express)
 
 #### `middleware/lang.js`
