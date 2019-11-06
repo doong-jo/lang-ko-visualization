@@ -8,12 +8,14 @@
 ### Install
 `npm install`
 
+### Key (GCP Natural Language API)
+`(YOUR_PROJECT_DIRECTORY)/GCP-key.json`
+
 ### Usage
-`export PORT=$PORT_NUMBER
-`npm start`
+`export PORT=(PORT_NUMBER_YOU_WANT) && npm start`
 
 ### Web
-`http://localhost:$PORT_NUMBER`
+`http://localhost:(PORT_NUMBER_YOU_WANT)`
 
 --- 
 
@@ -21,7 +23,6 @@
 
 #### `middleware/lang.js`
 - [GCP - Cloud Natural Language API](https://cloud.google.com/natural-language/docs/quickstart-client-libraries?hl=ko)를 참고하여 작성
-- API 발급 시 받을 수 있는 key 파일 이름을 `GCP-key.json` 으로 수정하여 root directory에 존재해야함
 
 #### GET
 - /gcp-lang?text=안녕하세요
@@ -30,8 +31,8 @@
 
 ### Client (VanillaJS)
 - `index.html` : layout
-- `js/main.js` : javascript (API 요청 및 listener)
-- `css/style.css` : 스타일링
+- `js/main.js` : API 요청 및 listener
+- `css/style.css` : 페이지 스타일링
 - `css/normalize.min.css` : css 초기화
 
 ---
