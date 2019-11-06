@@ -9,7 +9,11 @@
 `npm install`
 
 ### Usage
+`export PORT=$PORT_NUMBER
 `npm start`
+
+### Web
+`http://localhost:$PORT_NUMBER`
 
 --- 
 
