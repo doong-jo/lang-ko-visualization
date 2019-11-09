@@ -29,10 +29,7 @@
 
 ---
 
-### Client (VanillaJS)
-- `index.html` : layout
-- `js/main.js` : API 요청 및 listener
-- `css/style.css` : 페이지 스타일링
-- `css/normalize.min.css` : css 초기화
+### Client (VanillaJS, p5.js)
+- 문장에 대해서 감정 분석 후 시각화
 
 ---
